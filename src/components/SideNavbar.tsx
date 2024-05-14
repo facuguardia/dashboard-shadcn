@@ -7,7 +7,6 @@ type Props = {};
 
 import {
   ChevronRight,
-  ChevronLeft,
   LayoutDashboard,
   Settings,
   ShoppingCart,
@@ -16,7 +15,7 @@ import {
 import { Button } from "./ui/button";
 
 export default function SideNavbar({}: Props) {
-  const [isCollapsed, setIsCollapsed] = useState(true);
+  const [isCollapsed, setIsCollapsed] = useState(false);
 
   const toggleCollapse = () => {
     setIsCollapsed(!isCollapsed);
@@ -28,13 +27,9 @@ export default function SideNavbar({}: Props) {
         <Button
           variant="secondary"
           className="rounded-full p-2"
-          onClick={() => toggleCollapse()}
+          onClick={toggleCollapse}
         >
-          {isCollapsed ? (
-            <ChevronRight className="h-6 w-6" />
-          ) : (
-            <ChevronLeft className="h-6 w-6" />
-          )}
+          <ChevronRight className="h-6 w-6" />
         </Button>
       </div>
       <Nav
